@@ -1,0 +1,185 @@
+/* === Основні стилі === */
+body {
+  margin: 0;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* === Верхня панель === */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1b1b1b;
+  padding: 14px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.top-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.top-nav a:hover {
+  color: #00ffaa;
+}
+
+/* === Контейнер сторінки === */
+.page {
+  display: flex;
+  margin-top: 65px; /* відступ, щоб не залізти під хедер */
+  min-height: calc(100vh - 65px);
+}
+
+/* === Бокова панель === */
+.sidebar {
+  width: 220px;
+  background-color: #07110f;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 65px;   /* починається під шапкою */
+  left: 0;
+  bottom: 0;
+}
+
+.side-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.side-link:hover {
+  color: #00ffaa;
+}
+
+/* === Основний контент === */
+.content {
+  flex: 1;
+  margin-left: 220px; /* щоб контент не перекривав панель */
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.portrait-wrap {
+  margin: 20px 0;
+}
+
+.portrait {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #aaaaaa;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.info {
+  margin-top: 40px;
+}
+
+.info h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 350px;
+}
+
+.info-table th,
+.info-table td {
+  padding: 15px 25px;
+  border: 1px solid #333333;
+  font-size: 18px;
+  text-align: left;
+}
+
+.info-table th {
+  background-color: #1e1e1e;
+  width: 150px;
+}
+
+/* === Адаптивність === */
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: none;
+    padding: 20px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .side-link {
+    margin: 0 20px;
+    font-size: 18px;
+  }
+
+  .portrait {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+}
